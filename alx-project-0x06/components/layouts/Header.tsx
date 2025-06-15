@@ -1,15 +1,15 @@
-'use client'; 
+'use client';
 
 import React from 'react';
 import Link from "next/link";
 import Button from "../common/Button";
 import { usePathname } from "next/navigation";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "@/store/store";
+import { useSelector } from 'react-redux'; // ✅ Add this import
+import { RootState } from "@/store/store"; // ✅ Import RootState
 
 const Header: React.FC = () => {
   const pathname = usePathname();
-  const count = useSelector((state: RootState) => state.counter.value);
+  const count = useSelector((state: RootState) => state.counter.value); // ✅ Now works
 
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
