@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { useSelector } from 'react-redux'; // ✅ Import useSelector
-import { useAppDispatch, increment, decrement } from '@/store/store'; // ✅ Import hooks and actions
+import { useSelector } from 'react-redux';
+import { useAppDispatch, increment, decrement } from '@/store/store'; 
+import { AppDispatch } from '../store/store';
 
 const CounterApp: React.FC = () => {
   const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useAppDispatch(); // ✅ Correctly typed dispatch
+  const dispatch: AppDispatch = useAppDispatch();
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-yellow-400 to-pink-500 flex flex-col justify-center items-center text-white pt-20">
